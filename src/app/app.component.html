@@ -1,7 +1,24 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
+<div class="condition">
+  <span>时间选择:</span>
+  <rdk-combo-select [(value)]="rangeTimeComboValue"  openTrigger="click">
+    <rdk-range-time [(beginDate)]="beginDate" [(endDate)]="endDate" (change)="handleChange($event)"></rdk-range-time>
+  </rdk-combo-select>
+  <rdk-checkbox [enableIndeterminate]="false" [(checked)]="status" >多时段设置</rdk-checkbox>
+  <rdk-combo-select  [(value)]="selectedPeriodTimes" openTrigger="click" [disabled]="!status">
+    <rdk-tile-select
+      [(selectedItems)]="selectedPeriodTimes"
+      labelField="label"
+      [searchable]="true"
+      [data]="periodTimes"
+      width="350px"
+      tileOptionWidth="100px">
+    </rdk-tile-select>
+  </rdk-combo-select>
+  <span>快速选择:</span>
+  <rdk-radio-group (valueChange)="quickChoiceChange($event)"
+                   [data]="quickChoices"
+                   trackItemBy="id" [(value)]="selectedChoice">
+  </rdk-radio-group>
+  <br>
 </div>
 

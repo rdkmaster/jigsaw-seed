@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@rdkmaster/jigsaw": "^1.0.0-beta.1",
+    "@rdkmaster/jigsaw": "latest",
     "@angular/animations": "^4.2.3",
     "@angular/common": "^4.2.3",
     "@angular/compiler": "^4.2.3",
