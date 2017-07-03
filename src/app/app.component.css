@@ -1,8 +1,4 @@
-:host{
-  width:1000px;
-  margin:0 auto;
-  padding-top:30px
-}
 .condition{
   border-bottom: 2px solid #108ee9;
+  padding-bottom: 5px;
 }
