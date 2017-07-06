@@ -11,7 +11,7 @@ import {AppComponent} from './app.component';
 import {RdkJigsawModule} from '@rdkmaster/jigsaw';
 
 export function HttpLoaderFactory(http: Http) {
-  return new TranslateHttpLoader(http, './i18n/', '.json');
+  return new TranslateHttpLoader(http, 'app/i18n/', '.json');
 }
 
 @NgModule({
