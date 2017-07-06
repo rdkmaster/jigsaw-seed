@@ -63,6 +63,42 @@
   </rdk-radio-group>
   <span>最大查询记录数：</span>
   <rdk-input [(value)]="maxRecord" height="32px"></rdk-input>
-  <rdk-button>查询</rdk-button>
+  <rdk-button (click)="doSearch()">查询</rdk-button>
+</div>
+
+<div class="result">
+  <rdk-button (click)="customColumnDefine()" *ngIf="resultDisplay" >定制列显隐</rdk-button>
+  <rdk-table style="margin-bottom: 10px;" maxHeight="400px" [data]="tableData" *ngIf="displayType.id==1"
+             [columnDefines]="tableColumnDefine"></rdk-table>
+  <rdk-tab *ngIf="displayType.id!=1 && resultDisplay" [(selectedIndex)]="tabSelectIndex">
+    <rdk-tab-pane *ngFor="let tabData of tabDatas">
+      <div rdk-title><span class="fa fa-gift"></span>{{tabData.label}}</div>
+      <div rdk-body>
+         <rdk-table maxHeight="400px" [data]="this[tabData.id]" [columnDefines]="this[tabData.id+'ColumnDefine']"></rdk-table>
+      </div>
+    </rdk-tab-pane>
+  </rdk-tab>
+  {{tabSelectIndexs}}
+
+  <ng-template #dialog>
+    <rdk-dialog width="60%" (answer)="finishSetting()">
+      <div rdk-title>列头控制</div>
+      <div rdk-body>
+        <rdk-table [data]="headerData" [additionalColumnDefines]="additionalColumns" #settingTable></rdk-table>
+        <div><rdk-button (click)="finishSetting()">完成设置</rdk-button></div>
+      </div>
+    </rdk-dialog>
+  </ng-template>
+
+  <!--<rdk-pagination-->
+    <!--[total]="pageable.pagingInfo.totalRecord"-->
+    <!--[(pageSize)]="pageable.pagingInfo.pageSize"-->
+    <!--[(current)]="pageable.pagingInfo.currentPage"-->
+    <!--[pageSizeOptions]="[5, 10, 20]"-->
+    <!--[searchable]="true"-->
+    <!--[showQuickJumper]="true"-->
+    <!--(currentChange)="getCurrentPage()"-->
+    <!--(pageSizeChange)="getPageSize()"-->
+  <!--&gt;</rdk-pagination>-->
 </div>
 
