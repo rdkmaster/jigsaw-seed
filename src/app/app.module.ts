@@ -4,14 +4,18 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 
 import {
-  RdkButtonModule, RdkInputModule, RdkRadioModule, RdkTableModule, RdkTableRendererModule, DefaultCellRenderer,
-  TableHeadCheckbox, TableCellCheckbox, TableCellNum, TableCellEditor, TableCellOption, PopupService,
-  RdkComboSelectModule, RdkRangeTimeModule, RdkCheckBoxModule, RdkTileSelectModule, RdkPaginationModule, RdkTabsModule,
-  RdkDialogModule
+  PopupService, RdkJigsawModule
 } from '@rdkmaster/jigsaw';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpModule} from "@angular/http";
-import {RouterModule} from "@angular/router";
+import {HttpModule, Http} from '@angular/http';
+import {RouterModule} from '@angular/router';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+
+export function HttpLoaderFactory(http: Http) {
+  return new TranslateHttpLoader(http, './i18n/', '.json');
+}
+
 
 @NgModule({
   declarations: [
@@ -25,29 +29,20 @@ import {RouterModule} from "@angular/router";
       path: '**',
       component: AppComponent
     }]),
-    RdkButtonModule,
-    RdkInputModule,
-    RdkRadioModule,
-    RdkTableModule,
-    RdkTableRendererModule,
-    RdkComboSelectModule,
-    RdkRangeTimeModule,
-    RdkCheckBoxModule,
-    RdkTileSelectModule,
-    RdkPaginationModule,
-    RdkTabsModule,
-    RdkDialogModule
+    RdkJigsawModule,
+    TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [Http]
+        },
+        isolate: true
+      }
+    ),
   ],
   providers: [PopupService],
   bootstrap: [AppComponent],
-  entryComponents: [
-    DefaultCellRenderer,
-    TableHeadCheckbox,
-    TableCellCheckbox,
-    TableCellOption,
-    TableCellNum,
-    TableCellEditor,
-  ]
+  entryComponents: []
 })
 export class AppModule {
 }
