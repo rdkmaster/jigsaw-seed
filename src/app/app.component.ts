@@ -1,7 +1,8 @@
 import {Component, Renderer2, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 import {
   AdditionalColumnDefine,
-  ArrayCollection, ColumnDefine, PopupInfo, PopupService, RdkTable, TableCellCheckbox, TableData, TableHeadCheckbox,
+  ArrayCollection, ColumnDefine, JigsawTable, PopupInfo, PopupService, TableCellCheckbox, TableData,
+  TableHeadCheckbox,
   TimeGr,
   TimeService
 } from '@rdkmaster/jigsaw';
@@ -40,9 +41,6 @@ export class AppComponent {
   interfaces = [{label: 'S1-U', closable: false}, {label: 'S2-U', closable: false}];
 
   userTypes = [{label: 'IMSI', closable: false}, {label: 'MSISDN', closable: false}];
-
-  // pageable:PageableTableData;
-
   // TODO fix#77
   // selectUserType = [this.userTypes[0]];
   selectUserType = new ArrayCollection([{label: 'IMSI', closable: false}]);
@@ -63,7 +61,7 @@ export class AppComponent {
 
   dialogInfo: PopupInfo;
 
-  @ViewChild('settingTable') settingTable: RdkTable;
+  @ViewChild('settingTable') settingTable: JigsawTable;
 
   tableColumnDefine: ColumnDefine[] = [];
 

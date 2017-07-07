@@ -1,104 +1,92 @@
 <div class="condition">
   <span>时间选择:</span>
-  <rdk-combo-select [(value)]="rangeTimeComboValue" openTrigger="click">
-    <rdk-range-time [(beginDate)]="beginDate" [(endDate)]="endDate" (change)="handleChange($event)"></rdk-range-time>
-  </rdk-combo-select>
-  <rdk-checkbox [enableIndeterminate]="false" [(checked)]="status">多时段设置</rdk-checkbox>
-  <rdk-combo-select [(value)]="selectedPeriodTimes" openTrigger="click" [disabled]="!status">
-    <rdk-tile-select
+  <jigsaw-combo-select [(value)]="rangeTimeComboValue" openTrigger="click">
+    <jigsaw-range-time [(beginDate)]="beginDate" [(endDate)]="endDate" (change)="handleChange($event)"></jigsaw-range-time>
+  </jigsaw-combo-select>
+  <jigsaw-checkbox [enableIndeterminate]="false" [(checked)]="status">多时段设置</jigsaw-checkbox>
+  <jigsaw-combo-select [(value)]="selectedPeriodTimes" openTrigger="click" [disabled]="!status">
+    <jigsaw-tile-select
       [(selectedItems)]="selectedPeriodTimes"
       labelField="label"
       [searchable]="true"
       [data]="periodTimes"
       width="350px"
       tileOptionWidth="100px">
-    </rdk-tile-select>
-  </rdk-combo-select>
+    </jigsaw-tile-select>
+  </jigsaw-combo-select>
   <span>快速选择:</span>
-  <rdk-radio-group (valueChange)="quickChoiceChange($event)"
+  <jigsaw-radio-group (valueChange)="quickChoiceChange($event)"
                    [data]="quickChoices"
                    trackItemBy="id" [(value)]="selectedChoice">
-  </rdk-radio-group>
+  </jigsaw-radio-group>
   <br>
   <span>业务类型:</span>
-  <rdk-combo-select [(value)]="selectBusinessType" openTrigger="click" width="400px">
-    <rdk-tile-select
+  <jigsaw-combo-select [(value)]="selectBusinessType" openTrigger="click" width="400px">
+    <jigsaw-tile-select
       [(selectedItems)]="selectBusinessType"
       labelField="label"
       [searchable]="true"
       [data]="businessTypes"  [multipleSelect]="false"
       width="350px"
       tileOptionWidth="100px">
-    </rdk-tile-select>
-  </rdk-combo-select>
+    </jigsaw-tile-select>
+  </jigsaw-combo-select>
 
   <span>接口：</span>
-  <rdk-combo-select [(value)]="selectInterface" openTrigger="click" width="400px">
-    <rdk-tile-select
+  <jigsaw-combo-select [(value)]="selectInterface" openTrigger="click" width="400px">
+    <jigsaw-tile-select
       [(selectedItems)]="selectInterface"
       labelField="label"
       [searchable]="true"
       [data]="interfaces"
       width="350px"
       tileOptionWidth="100px">
-    </rdk-tile-select>
-  </rdk-combo-select>
+    </jigsaw-tile-select>
+  </jigsaw-combo-select>
   <br>
   <span>查询条件:</span>
-  <rdk-combo-select [(value)]="selectUserType" openTrigger="click" width="120px">
-    <rdk-tile-select
+  <jigsaw-combo-select [(value)]="selectUserType" openTrigger="click" width="120px">
+    <jigsaw-tile-select
       [(selectedItems)]="selectUserType"
       labelField="label"
       [searchable]="true"
       [data]="userTypes" [multipleSelect]="false"
       width="100px"
       tileOptionWidth="100px">
-    </rdk-tile-select>
-  </rdk-combo-select>
-  <rdk-input [(value)]="userInfo" height="32px"></rdk-input>
+    </jigsaw-tile-select>
+  </jigsaw-combo-select>
+  <jigsaw-input [(value)]="userInfo" height="32px"></jigsaw-input>
   <span style="margin-left:100px">显示方式：</span>
-  <rdk-radio-group (valueChange)="displayTypeChange($event)"
+  <jigsaw-radio-group (valueChange)="displayTypeChange($event)"
                    [data]="displayTypes"
                    trackItemBy="id" [(value)]="displayType">
-  </rdk-radio-group>
+  </jigsaw-radio-group>
   <span>最大查询记录数：</span>
-  <rdk-input [(value)]="maxRecord" height="32px"></rdk-input>
-  <rdk-button (click)="doSearch()">查询</rdk-button>
+  <jigsaw-input [(value)]="maxRecord" height="32px"></jigsaw-input>
+  <jigsaw-button (click)="doSearch()">查询</jigsaw-button>
 </div>
 
 <div class="result">
-  <rdk-button (click)="customColumnDefine()" *ngIf="resultDisplay" >定制列显隐</rdk-button>
-  <rdk-table style="margin-bottom: 10px;" maxHeight="400px" [data]="tableData" *ngIf="displayType.id==1"
-             [columnDefines]="tableColumnDefine"></rdk-table>
-  <rdk-tab *ngIf="displayType.id!=1 && resultDisplay" [(selectedIndex)]="tabSelectIndex">
-    <rdk-tab-pane *ngFor="let tabData of tabDatas">
-      <div rdk-title><span class="fa fa-gift"></span>{{tabData.label}}</div>
-      <div rdk-body>
-         <rdk-table maxHeight="400px" [data]="this[tabData.id]" [columnDefines]="this[tabData.id+'ColumnDefine']"></rdk-table>
+  <jigsaw-button (click)="customColumnDefine()" *ngIf="resultDisplay" style="float:right;margin-bottom: 5px">定制列显隐</jigsaw-button>
+  <jigsaw-table style="margin-bottom: 10px;" maxHeight="550px" [data]="tableData" *ngIf="displayType.id==1"
+             [columnDefines]="tableColumnDefine"></jigsaw-table>
+  <jigsaw-tab *ngIf="displayType.id!=1 && resultDisplay" [(selectedIndex)]="tabSelectIndex">
+    <jigsaw-tab-pane *ngFor="let tabData of tabDatas">
+      <div jigsaw-title><span class="fa fa-gift"></span>{{tabData.label}}</div>
+      <div jigsaw-body>
+         <jigsaw-table maxHeight="550px" [data]="this[tabData.id]" [columnDefines]="this[tabData.id+'ColumnDefine']"></jigsaw-table>
       </div>
-    </rdk-tab-pane>
-  </rdk-tab>
-  {{tabSelectIndexs}}
+    </jigsaw-tab-pane>
+  </jigsaw-tab>
 
   <ng-template #dialog>
-    <rdk-dialog width="60%" (answer)="finishSetting()">
-      <div rdk-title>列头控制</div>
-      <div rdk-body>
-        <rdk-table [data]="headerData" [additionalColumnDefines]="additionalColumns" #settingTable></rdk-table>
-        <div><rdk-button (click)="finishSetting()">完成设置</rdk-button></div>
+    <jigsaw-dialog width="60%" (answer)="finishSetting()">
+      <div jigsaw-title>列头控制</div>
+      <div jigsaw-body>
+        <jigsaw-table [data]="headerData" [additionalColumnDefines]="additionalColumns" #settingTable></jigsaw-table>
+        <div style="margin:5px 0px;text-align:center"><jigsaw-button (click)="finishSetting()">完成设置</jigsaw-button></div>
       </div>
-    </rdk-dialog>
+    </jigsaw-dialog>
   </ng-template>
-
-  <!--<rdk-pagination-->
-    <!--[total]="pageable.pagingInfo.totalRecord"-->
-    <!--[(pageSize)]="pageable.pagingInfo.pageSize"-->
-    <!--[(current)]="pageable.pagingInfo.currentPage"-->
-    <!--[pageSizeOptions]="[5, 10, 20]"-->
-    <!--[searchable]="true"-->
-    <!--[showQuickJumper]="true"-->
-    <!--(currentChange)="getCurrentPage()"-->
-    <!--(pageSizeChange)="getPageSize()"-->
-  <!--&gt;</rdk-pagination>-->
 </div>
 
