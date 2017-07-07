@@ -8,7 +8,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {AppComponent} from './app.component';
 
-import {RdkJigsawModule} from '@rdkmaster/jigsaw';
+import {JigsawModule} from '@rdkmaster/jigsaw';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, 'app/i18n/', '.json');
@@ -23,7 +23,7 @@ export function HttpLoaderFactory(http: Http) {
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    RdkJigsawModule,
+    JigsawModule,
     TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
