@@ -1,7 +1,11 @@
 <!--The whole content below can be removed with the new code.-->
 <div style="text-align:center">
-  <h1>
+  <h1 style="padding-bottom: 12px">
     Welcome to {{title}}!!
   </h1>
+  <h4 style="padding-bottom: 48px">Every awesome application starts from this seed.</h4>
+
+  <jigsaw-button (click)="gotoTourist()">{{ 'get-started' | translate }}</jigsaw-button>
+  <jigsaw-button (click)="gotoGithub()">{{ 'give-star' | translate }}</jigsaw-button>
 </div>
 

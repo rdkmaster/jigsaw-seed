@@ -1,42 +1,39 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule, Http} from '@angular/http';
+import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateModule, TranslateService} from "@ngx-translate/core";
+import {JigsawModule} from '@rdkmaster/jigsaw';
 
 import {AppComponent} from './app.component';
 
-import {JigsawModule} from '@rdkmaster/jigsaw';
-
-export function HttpLoaderFactory(http: Http) {
-  return new TranslateHttpLoader(http, 'app/i18n/', '.json');
-}
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    BrowserAnimationsModule,
-    JigsawModule,
-    TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [Http]
-        },
-        isolate: true
-      }
-    ),
+    BrowserModule, FormsModule, HttpModule, BrowserAnimationsModule,
+    JigsawModule, TranslateModule.forRoot()
   ],
-  providers: [],
+  providers: [TranslateService],
   bootstrap: [AppComponent],
   entryComponents: []
 })
 export class AppModule {
+  constructor(translateService: TranslateService) {
+    translateService.setTranslation('zh', {
+      'get-started': '马上开始',
+      'give-star': '给 Jigsaw 点个星星'
+    });
+    translateService.setTranslation('en', {
+      'get-started': 'Get started',
+      'give-star': 'Give us a star on Github.com'
+    });
+
+    const lang: string = translateService.getBrowserLang();
+    translateService.setDefaultLang(lang);
+    translateService.use(lang);
+  }
 }
