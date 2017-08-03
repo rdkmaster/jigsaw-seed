@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "first-app"
+    "name": "jigsaw-seed"
   },
   "apps": [
     {
@@ -9,8 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "app/i18n"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
