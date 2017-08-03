@@ -7,7 +7,7 @@ import {Component, Renderer2, ViewContainerRef} from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'Jigsaw seed application';
+  title = 'Jigsaw Seed';
 
   constructor(public viewContainerRef: ViewContainerRef, public renderer: Renderer2) {
   }
