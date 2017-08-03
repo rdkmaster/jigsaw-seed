@@ -10,7 +10,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "app/i18n"
+        "app/i18n",
+        "mock-data"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -26,6 +27,7 @@
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "../node_modules/ztree/css/zTreeStyle/zTreeStyle.css",
         "../node_modules/@rdkmaster/jigsaw/theming.scss",
+        "./compodoc.css",
         "styles.scss"
       ],
       "scripts": [

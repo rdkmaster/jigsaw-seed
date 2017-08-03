@@ -1,39 +1,51 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TranslateModule, TranslateService} from "@ngx-translate/core";
-import {JigsawModule} from '@rdkmaster/jigsaw';
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {AppComponent} from './app.component';
+import { Router } from '@angular/router';
 
+import { AppComponent }            from './app.component';
+import { AppRoutingModule }        from './app-routing.module';
+
+import { HeroesModule }            from './heroes/heroes.module';
+import { ComposeMessageComponent } from './compose-message.component';
+import { LoginRoutingModule }      from './login-routing.module';
+import { LoginComponent }          from './login.component';
+import { PageNotFoundComponent }   from './not-found.component';
+
+import { DialogService }           from './dialog.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, BrowserAnimationsModule,
-    JigsawModule, TranslateModule.forRoot()
+    BrowserModule,
+    FormsModule,
+    HeroesModule,
+    LoginRoutingModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
-  providers: [TranslateService],
-  bootstrap: [AppComponent],
-  entryComponents: []
+  declarations: [
+    AppComponent,
+    ComposeMessageComponent,
+    LoginComponent,
+    PageNotFoundComponent
+  ],
+  providers: [
+    DialogService
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
-  constructor(translateService: TranslateService) {
-    translateService.setTranslation('zh', {
-      'get-started': '马上开始',
-      'give-star': '给 Jigsaw 点个星星'
-    });
-    translateService.setTranslation('en', {
-      'get-started': 'Get started',
-      'give-star': 'Give us a star on Github.com'
-    });
-
-    const lang: string = translateService.getBrowserLang();
-    translateService.setDefaultLang(lang);
-    translateService.use(lang);
+  // Diagnostic only: inspect router configuration
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
   }
 }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

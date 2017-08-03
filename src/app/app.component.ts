@@ -1,22 +1,26 @@
-import {Component, Renderer2, ViewContainerRef} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <h1 class="title">Angular Router</h1>
+    <nav>
+      <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+      <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+      <a routerLink="/admin" routerLinkActive="active">Admin</a>
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+      <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+    </nav>
+    <router-outlet></router-outlet>
+    <router-outlet name="popup"></router-outlet>
+  `
 })
 export class AppComponent {
-
-  title = 'Jigsaw seed application';
-
-  constructor(public viewContainerRef: ViewContainerRef, public renderer: Renderer2) {
-  }
-
-  gotoTourist() {
-    window.open('https://github.com/rdkmaster/jigsaw/blob/master/docs/tourist/index.md', '_blank');
-  }
-
-  gotoGithub() {
-    window.open('https://github.com/rdkmaster/jigsaw', '_blank');
-  }
 }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
