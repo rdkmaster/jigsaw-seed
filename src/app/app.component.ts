@@ -1,7 +1,7 @@
 import {Component, Renderer2, ViewContainerRef} from '@angular/core';
 
 @Component({
-    selector: 'app-root',
+    selector: 'jigsaw-app',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
