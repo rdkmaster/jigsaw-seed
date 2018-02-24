@@ -1,4 +1,4 @@
-import {Component, Renderer2, ViewContainerRef} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'jigsaw-app',
@@ -8,9 +8,6 @@ import {Component, Renderer2, ViewContainerRef} from '@angular/core';
 export class AppComponent {
 
     title = 'Jigsaw Seed';
-
-    constructor(public viewContainerRef: ViewContainerRef, public renderer: Renderer2) {
-    }
 
     gotoTourist() {
         window.open('https://github.com/rdkmaster/jigsaw/blob/master/docs/tourist/index.md', '_blank');

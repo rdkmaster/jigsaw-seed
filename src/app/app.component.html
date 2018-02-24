@@ -1,5 +1,13 @@
-<!--The whole content below can be removed with the new code.-->
+<!--
+    leave jigsaw-root as the root of this component,
+    this is necessary for a bootstrap component,
+    and NOT allowed for other components
+-->
 <jigsaw-root>
+
+    <!--
+        The whole content below can be replaced with the your own code.
+    -->
     <div style="text-align:center">
         <h1 style="padding-bottom: 12px">
             Welcome to {{title}}!!
@@ -9,4 +17,5 @@
         <jigsaw-button (click)="gotoTourist()">{{ 'get-started' | translate }}</jigsaw-button>
         <jigsaw-button (click)="gotoGithub()">{{ 'give-star' | translate }}</jigsaw-button>
     </div>
+
 </jigsaw-root>
