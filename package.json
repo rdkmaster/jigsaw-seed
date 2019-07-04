@@ -30,7 +30,7 @@
     "ngx-perfect-scrollbar": "~7.2.1",
     "peity": "~3.2.1",
     "rxjs": "~6.4.0",
-    "web-animations-js": "github:angular/web-animations-js#release_pr208",
+    "web-animations-js": "~2.3.2",
     "zone.js": "~0.9.1",
     "ztree": "~3.5.24"
   },
