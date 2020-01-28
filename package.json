@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~5.2.11",
     "@angular/router": "~5.2.11",
     "@ngx-translate/core": "~8.0.0",
+    "@rdkmaster/iconfont": "^1.0.6",
     "@rdkmaster/jigsaw": "~5.0.0",
     "bootstrap": "3.4.1",
     "core-js": "~2.5.7",
