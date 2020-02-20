@@ -27,6 +27,7 @@
     "core-js": "~2.5.7",
     "echarts": "~4.1.0",
     "eonasdan-bootstrap-datetimepicker": "~4.17.47",
+    "file-loader": "~5.1.0",
     "font-awesome": "~4.7.0",
     "jquery": "~3.1.1",
     "moment": "2.22.2",
@@ -35,6 +36,7 @@
     "perfect-scrollbar": "~1.4.0",
     "rxjs": "~5.5.12",
     "web-animations-js": "~2.3.1",
+    "webpack": "~3.10.0",
     "zone.js": "~0.8.29",
     "ztree": "~3.5.24"
   },
