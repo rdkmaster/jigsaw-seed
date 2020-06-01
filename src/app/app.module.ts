@@ -25,11 +25,11 @@ export class AppModule {
         translateService.setTranslation('zh', {
             'get-started': '马上开始',
             'give-star': '给 Jigsaw 点个星星'
-        });
+        }, true);
         translateService.setTranslation('en', {
             'get-started': 'Get started',
             'give-star': 'Give us a star on Github.com'
-        });
+        }, true);
 
         const lang: string = translateService.getBrowserLang();
         translateService.setDefaultLang(lang);
