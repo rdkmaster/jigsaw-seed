@@ -22,7 +22,7 @@
     "@angular/router": "~8.0.0",
     "@ngx-translate/core": "~11.0.1",
     "@rdkmaster/icon-font": "~1.0.6",
-    "@rdkmaster/jigsaw": "^8.0.0",
+    "@rdkmaster/jigsaw": "^8.0.18",
     "bootstrap": "~3.4.1",
     "core-js": "~3.0.1",
     "echarts": "~4.7.0",
