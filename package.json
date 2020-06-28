@@ -28,7 +28,7 @@
     "echarts": "~4.7.0",
     "eonasdan-bootstrap-datetimepicker": "~4.17.47",
     "font-awesome": "~4.7.0",
-    "jquery": "~3.1.1",
+    "jquery": "~3.5.1",
     "moment": "2.22.2",
     "ngx-perfect-scrollbar": "~8.0.0",
     "peity": "~3.2.1",
