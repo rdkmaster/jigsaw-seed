@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {JigsawTheme, MajorStyle} from '@rdkmaster/jigsaw';
 
 @Component({
     selector: 'jigsaw-app',
@@ -15,5 +16,9 @@ export class AppComponent {
 
     gotoGithub() {
         window.open('https://github.com/rdkmaster/jigsaw', '_blank');
+    }
+
+    changeTheme(style: MajorStyle) {
+        JigsawTheme.changeTheme('paletx-pro', style);
     }
 }

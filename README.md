@@ -4,12 +4,10 @@
 
 **所有可用的种子工程**
 
-终端 | 色系 | 链接
------|-----|-----
-桌面端 | 浅色系 | [仓库](https://github.com/rdkmaster/jigsaw-seed) / [直接下载](https://github.com/rdkmaster/jigsaw-seed/archive/master.zip)
-桌面端 | 深色系 | [仓库](https://github.com/rdkmaster/jigsaw-seed-dark) / [直接下载](https://github.com/rdkmaster/jigsaw-seed-dark/archive/master.zip)
-移动端 | 浅色系 | [仓库](https://github.com/rdkmaster/jigsaw-seed-mobile) / [直接下载](https://github.com/rdkmaster/jigsaw-seed-mobile/archive/master.zip)
-移动端 | 深色系 | [仓库](https://github.com/rdkmaster/jigsaw-seed-dark-mobile) / [直接下载](https://github.com/rdkmaster/jigsaw-seed-dark-mobile/archive/master.zip)
+终端 | 链接
+-----|-----
+桌面端 | [仓库](https://github.com/rdkmaster/jigsaw-seed) / [直接下载](https://github.com/rdkmaster/jigsaw-seed/archive/master.zip)
+移动端 | [仓库](https://github.com/rdkmaster/jigsaw-seed-mobile) / [直接下载](https://github.com/rdkmaster/jigsaw-seed-mobile/archive/master.zip)
 
 
 **关于cnpm安装的依赖编译失败的说明**

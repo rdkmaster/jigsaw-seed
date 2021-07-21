@@ -1,5 +1,5 @@
 <!--
-    leave jigsaw-root as the root of this component,
+    Leave jigsaw-root as the root of the entry component,
     this is necessary for a bootstrap component,
     and NOT allowed for other components
 -->
@@ -9,13 +9,24 @@
         The whole content below can be replaced with the your own code.
     -->
     <div style="text-align:center">
-        <h1 style="padding-bottom: 12px">
+        <h1 style="padding-bottom: 24px; margin-top: 10%;">
             Welcome to {{title}}!!
         </h1>
         <h4 style="padding-bottom: 48px">Every awesome application starts from this seed.</h4>
 
-        <jigsaw-button (click)="gotoTourist()">{{ 'get-started' | translate }}</jigsaw-button>
-        <jigsaw-button (click)="gotoGithub()">{{ 'give-star' | translate }}</jigsaw-button>
+        <p>
+            <jigsaw-button colorType="primary" (click)="gotoTourist()">
+                {{ 'get-started' | translate }}
+            </jigsaw-button>
+            <jigsaw-button (click)="gotoGithub()">
+                {{ 'give-star' | translate }}
+            </jigsaw-button>
+        </p>
+        <p style="margin-top: 12px">
+            <span>切换皮肤：</span>
+            <a (click)="changeTheme('light')" style="margin-right: 8px">浅色</a>
+            <a (click)="changeTheme('dark')">深色</a>
+        </p>
     </div>
 
 </jigsaw-root>
