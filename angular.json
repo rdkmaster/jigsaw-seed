@@ -24,7 +24,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "*.css",
+                "input": "node_modules/@rdkmaster/jigsaw/prebuilt-themes/",
+                "output": "/themes/"
+              }
             ],
             "styles": [
               "./node_modules/font-awesome/css/font-awesome.min.css",
