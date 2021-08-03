@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
     "@ngx-translate/core": "~11.0.1",
-    "@rdkmaster/icon-font": "^1.0.6",
+    "@rdkmaster/icon-font": "^3.9.8",
     "@rdkmaster/jigsaw": "^10.9.1",
     "core-js": "~3.0.1",
     "echarts": "~4.9.0",
