@@ -1,0 +1,28 @@
+.header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header .name {
+    font-size: 18px;
+    color: var(--bg-disabled);
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.header img {
+    margin-left: 8px;
+    height: 32px;
+}
+
+.header jigsaw-button-bar {
+    position: absolute;
+    right: 176px;
+}
+
+.header jigsaw-search-input {
+    position: absolute;
+    right: 8px;
+}
