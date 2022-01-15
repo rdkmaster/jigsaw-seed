@@ -7,8 +7,9 @@ import {JigsawTheme, MajorStyle} from '@rdkmaster/jigsaw';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+    mixingTheme = 'light';
     title = 'Jigsaw Seed';
+    headerBg = '#fff';
 
     gotoTourist() {
         window.open('https://github.com/rdkmaster/jigsaw/blob/master/docs/tourist/index.md', '_blank');
@@ -20,5 +21,7 @@ export class AppComponent {
 
     changeTheme(style: MajorStyle) {
         JigsawTheme.changeTheme('paletx-pro', style);
+        this.mixingTheme = style == 'light' ? 'dark' : 'light';
+        this.headerBg = style == 'light' ? '#181a2a' : '#fff';
     }
 }

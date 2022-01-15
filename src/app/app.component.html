@@ -8,6 +8,15 @@
     <!--
         The whole content below can be replaced with the your own code.
     -->
+    <div class="header" [ngStyle]="{'background-color': headerBg}">
+        <img src="favicon.ico">
+        <span class="name">Jigsaw</span>
+        <jigsaw-button-bar [theme]="mixingTheme" [selectedItems]="[{label:'深色',value:'dark'}]"
+                           [data]="[{label:'浅色',value:'light'}, {label:'深色',value:'dark'}]"
+                           (selectedItemsChange)="changeTheme($event[0].value)">
+        </jigsaw-button-bar>
+        <jigsaw-search-input [theme]="mixingTheme" width="160px"></jigsaw-search-input>
+    </div>
     <div style="text-align:center">
         <h1 style="padding-bottom: 24px; margin-top: 10%;">
             Welcome to {{title}}!!
@@ -27,6 +36,7 @@
             <a (click)="changeTheme('light')" style="margin-right: 8px">浅色</a>
             <a (click)="changeTheme('dark')">深色</a>
         </p>
+        <p>header的色调永远与主题色相反，注意观察header里的组件可以自适应</p>
     </div>
 
 </jigsaw-root>
