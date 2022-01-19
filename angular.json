@@ -33,7 +33,7 @@
                 {
                     "glob": "*.css",
                     "input": "node_modules/@rdkmaster/jigsaw/prebuilt-themes/wings-theme/",
-                    "output": "/themes/components/"
+                    "output": "/themes/wings-theme/"
                 },
                 {
                     "glob": "*",
