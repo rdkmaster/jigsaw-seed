@@ -11,6 +11,10 @@ export class AppComponent {
     title = 'Jigsaw Seed';
     headerBg = '#fff';
 
+    constructor() {
+        this.changeTheme('dark');
+    }
+
     gotoTourist() {
         window.open('https://github.com/rdkmaster/jigsaw/blob/master/docs/tourist/index.md', '_blank');
     }
