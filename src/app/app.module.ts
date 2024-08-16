@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
-import {JigsawModule} from '@rdkmaster/jigsaw';
+import {JigsawModule,JigsawThemeService} from '@rdkmaster/jigsaw';
 
 import {AppComponent} from './app.component';
 
@@ -16,7 +16,7 @@ import {AppComponent} from './app.component';
         BrowserModule, FormsModule, BrowserAnimationsModule,
         JigsawModule, TranslateModule.forRoot()
     ],
-    providers: [TranslateService],
+    providers: [TranslateService,JigsawThemeService],
     bootstrap: [AppComponent],
     entryComponents: []
 })
